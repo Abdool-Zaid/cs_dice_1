@@ -6,29 +6,27 @@ namespace Cs_dice_1
     {
         static void Main(string[] args)
         {
-            // welcome 
-            // roll loop
-            // accept ndD from cmd
-            // if follow, roll dice 
-            // if not follow, show command 
+          
 
             System.Console.WriteLine(@"[PH] welcome text"); //TODO: change to welcome message
 
             while (true)
             {
                 string? input = Console.ReadLine();
-                if (string.IsNullOrWhiteSpace(input))
+                input = string.IsNullOrWhiteSpace(input) ? "bad" : input;// pre check needed to assert not null
+                var Payload = Cs_dice_1.Utils.Check_input(input);
+                if (Payload.Status > 0 )
                 {
-                    System.Console.WriteLine("please enter a valid dice roll");
+                    System.Console.WriteLine("please enter a valid dice roll");//TODO: add switch case here to handle different errors
                 }
                 else if (input == @"/bye")
                 {
                     System.Console.WriteLine("goodbye");
                     break;
                 }
-                else
+                else 
                 {
-                    var roll = Cs_dice_1.Math.Roll(20);
+                    var roll = Cs_dice_1.Math.Roll(Payload.Payload.Type_of_dice);
                     //    if(roll.Status )
                     System.Console.WriteLine(roll.Payload);
                 }

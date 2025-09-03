@@ -3,9 +3,19 @@ namespace Cs_dice_1
     public class Data<T>// will hold enums and common structs
     {
         public enum Coin { tail = 0, head = 1 }
+        public struct Roll_input
+        {
+            public byte Amount_of_rolls; // want to limit this to 1 - 100
+            public byte Type_of_dice; // same as above
+            public Roll_input()
+            {
+                Amount_of_rolls = 1;
+                Type_of_dice = 20;
+            }
+        }
         public struct Packet
         {
-           public byte Status;
+            public byte Status;
             public T? Payload;
 
             public Packet()
