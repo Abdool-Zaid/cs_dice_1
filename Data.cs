@@ -1,6 +1,6 @@
 namespace Cs_dice_1
 {
-    public class Data<T>// will hold enums and common structs
+    public class Data// will hold enums and common structs
     {
         public enum Coin { tail = 0, head = 1 }
         public struct Roll_input
@@ -13,7 +13,7 @@ namespace Cs_dice_1
                 Type_of_dice = 20;
             }
         }
-        public struct Packet
+        public struct Packet<T>
         {
             public byte Status;
             public T? Payload;
