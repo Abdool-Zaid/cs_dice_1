@@ -9,7 +9,7 @@ namespace Cs_dice_1
             public byte Type_of_dice; // same as above
             public Roll_input()
             {
-                Amount_of_rolls = 1;
+                Amount_of_rolls = 5;
                 Type_of_dice = 20;
             }
         }

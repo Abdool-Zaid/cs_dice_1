@@ -6,7 +6,7 @@ namespace Cs_dice_1
     {
         static void Main(string[] args)
         {
-          
+
 
             System.Console.WriteLine(@"[PH] welcome text"); //TODO: change to welcome message
 
@@ -15,7 +15,7 @@ namespace Cs_dice_1
                 string? input = Console.ReadLine();
                 input = string.IsNullOrWhiteSpace(input) ? "bad" : input;// pre check needed to assert not null
                 var Payload = Cs_dice_1.Utils.Check_input(input);
-                if (Payload.Status > 0 )
+                if (Payload.Status > 0)
                 {
                     System.Console.WriteLine("please enter a valid dice roll");//TODO: add switch case here to handle different errors
                 }
@@ -24,10 +24,10 @@ namespace Cs_dice_1
                     System.Console.WriteLine("goodbye");
                     break;
                 }
-                else 
+                else
                 {
                     var roll = Cs_dice_1.Math.Roll_dice(Payload.Payload);
-                    System.Console.WriteLine(roll.Payload);
+                    Cs_dice_1.View.Show_all_results(roll.Payload);
                 }
 
             }
