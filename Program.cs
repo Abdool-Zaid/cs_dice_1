@@ -7,8 +7,7 @@ namespace Cs_dice_1
         static void Main(string[] args)
         {
 
-
-            System.Console.WriteLine(@"[PH] welcome text"); //TODO: change to welcome message
+                    Cs_dice_1.View.Show(@"[PH] welcome text");//TODO: change to welcome message
 
             while (true)
             {
@@ -17,11 +16,12 @@ namespace Cs_dice_1
                 var Payload = Cs_dice_1.Utils.Check_input(input);
                 if (Payload.Status > 0)
                 {
-                    System.Console.WriteLine("please enter a valid dice roll");//TODO: add switch case here to handle different errors
+                    //TODO: add switch case here to handle different errors
+                    Cs_dice_1.View.Show("please enter a valid dice roll");
                 }
                 else if (input == @"/bye")
                 {
-                    System.Console.WriteLine("goodbye");
+                    Cs_dice_1.View.Show("goodbye");
                     break;
                 }
                 else

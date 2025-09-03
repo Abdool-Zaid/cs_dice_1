@@ -1,4 +1,6 @@
 
+using System.Text.RegularExpressions;
+
 namespace Cs_dice_1
 {
     public class Utils
@@ -13,7 +15,18 @@ namespace Cs_dice_1
             }
             else
             {
-                res.Status = 0;
+                Cs_dice_1.Data.Patterns patterns = new();
+
+                bool is_match = Regex.IsMatch(inp_cmd, patterns.roll);
+                if (is_match)
+                {
+                    
+                    res.Status = 0;
+                }
+                else
+                {
+                    res.Status = 3;
+                }
 
             }
             
