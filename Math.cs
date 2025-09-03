@@ -20,7 +20,6 @@ namespace Cs_dice_1
 
             res.Status = 0;// TODO: add checks
             res.Payload = new byte[roll_Input.Amount_of_rolls];
-            System.Console.WriteLine("length {0}", res.Payload.Length);
             for (int i = 0; i < roll_Input.Amount_of_rolls; i++)
             {
                 res.Payload[i] = Roll(roll_Input.Type_of_dice).Payload;

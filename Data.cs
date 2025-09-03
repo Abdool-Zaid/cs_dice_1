@@ -8,7 +8,7 @@ namespace Cs_dice_1
              public string roll;
             public Patterns()
             {
-                roll = @"^(?:[1-9]|[1-9][0-9]|100)[d](?:[1-9]|[1-9][0-9]|100)$";
+                roll = @"^([1-9]|[1-9][0-9]|100)[d]([1-9]|[1-9][0-9]|100)$";
             }
         } 
         public struct Roll_input

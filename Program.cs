@@ -14,15 +14,15 @@ namespace Cs_dice_1
                 string? input = Console.ReadLine();
                 input = string.IsNullOrWhiteSpace(input) ? "bad" : input;// pre check needed to assert not null
                 var Payload = Cs_dice_1.Utils.Check_input(input);
+                if (input == @"/bye")
+                {
+                    Cs_dice_1.View.Show("goodbye");
+                    break;
+                }
                 if (Payload.Status > 0)
                 {
                     //TODO: add switch case here to handle different errors
                     Cs_dice_1.View.Show("please enter a valid dice roll");
-                }
-                else if (input == @"/bye")
-                {
-                    Cs_dice_1.View.Show("goodbye");
-                    break;
                 }
                 else
                 {
