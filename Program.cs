@@ -1,6 +1,7 @@
 ﻿namespace Cs_dice_1
 {
-     public class Program{
+     public class Program
+    {
         static void Main(string[] args)
         {
             // welcome 
@@ -8,7 +9,7 @@
             // accept ndD from cmd
             // if follow, roll dice 
             // if not follow, show command 
-                
+
 
 
 
