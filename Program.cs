@@ -26,8 +26,7 @@ namespace Cs_dice_1
                 }
                 else 
                 {
-                    var roll = Cs_dice_1.Math.Roll(Payload.Payload.Type_of_dice);
-                    //    if(roll.Status )
+                    var roll = Cs_dice_1.Math.Roll_dice(Payload.Payload);
                     System.Console.WriteLine(roll.Payload);
                 }
 

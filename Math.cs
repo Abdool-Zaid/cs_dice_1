@@ -6,7 +6,7 @@ namespace Cs_dice_1
     {
         // sum of rolls
         // roll random number
-        static public Cs_dice_1.Data<byte>.Packet Roll(byte max_num)
+        static Cs_dice_1.Data<byte>.Packet Roll(byte max_num)
         {
             Cs_dice_1.Data<byte>.Packet res;
             var rand = new Random();
@@ -15,6 +15,16 @@ namespace Cs_dice_1
 
             return res;
         }
-        // coinflip enum
+        public static Cs_dice_1.Data<byte[]>.Packet Roll_dice(Cs_dice_1.Data<object>.Roll_input roll_Input)
+        {
+            Data<byte[]>.Packet res = new()
+            {
+                Status = 0
+                
+            };
+
+            return res;
+        }
+            
     }
 }
