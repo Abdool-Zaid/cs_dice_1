@@ -10,7 +10,7 @@ namespace Cs_dice_1
             Cs_dice_1.Data<byte>.Packet res;
             var rand = new Random();
             res.Status = 0;
-            res.Payload = (byte)rand.Next(1, max_num);
+            res.Payload = (byte)rand.Next(1, max_num+1);// need the +1 to include max_num in rolls
 
             return res;
         }
