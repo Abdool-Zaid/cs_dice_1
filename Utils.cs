@@ -5,9 +5,9 @@ namespace Cs_dice_1
 {
     public class Utils
     {
-        static public Cs_dice_1.Data.Packet<Cs_dice_1.Data.Roll_input> Check_input(string inp_cmd)
+        static public Data.Packet<Data.Roll_input> Check_input(string inp_cmd)
         {
-            Cs_dice_1.Data.Packet<Cs_dice_1.Data.Roll_input> res = new();
+            Data.Packet<Data.Roll_input> res = new();
             if (String.IsNullOrWhiteSpace(inp_cmd))
             {
                 res.Status = Data.Status.blank;
@@ -17,7 +17,7 @@ namespace Cs_dice_1
 
             else
             {
-                Cs_dice_1.Data.Patterns patterns = new();// TODO: change to switch cas to handle coin flip and more later down the line 
+                Data.Patterns patterns = new();// TODO: use reflection to handle coin flip and more later down the line 
 
                 Match match = Regex.Match(inp_cmd, patterns.roll);
                 if (match.Success)

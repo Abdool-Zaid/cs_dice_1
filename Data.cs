@@ -5,7 +5,7 @@ namespace Cs_dice_1
        
         public enum Coin { tail = 1, head = 2 }
         public enum Status {ok, blank, range_error}
-        public struct Patterns
+        public struct Patterns 
         {
             public string roll;
             public string coin;
@@ -27,7 +27,7 @@ namespace Cs_dice_1
         }
         public struct Packet<T>
         {
-            public Cs_dice_1.Data.Status Status;
+            public Data.Status Status;
             public T? Payload;
 
             public Packet()

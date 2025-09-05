@@ -5,16 +5,16 @@ namespace Cs_dice_1
     public class Math
     {
         // TODO: add sum of rolls function
-        static Cs_dice_1.Data.Packet<byte> Roll(byte max_num)
+        static Data.Packet<byte> Roll(byte max_num)
         {
-            Cs_dice_1.Data.Packet<byte> res;
+            Data.Packet<byte> res;
             var rand = new Random();
             res.Status = Data.Status.ok;
             res.Payload = (byte)rand.Next(1, max_num+1);// need the +1 to include max_num in rolls
 
             return res;
         }
-        static Cs_dice_1.Data.Packet<Cs_dice_1.Data.Coin> Coin_flip()
+        static Data.Packet<Data.Coin> Coin_flip()
         {
             Data.Packet<Data.Coin> res = new();
             var rand = new Random();
@@ -22,7 +22,7 @@ namespace Cs_dice_1
             res.Payload = (Data.Coin)rand.Next(1,2);
             return res;
         }
-        public static Cs_dice_1.Data.Packet<byte[]> Roll_dice(Cs_dice_1.Data.Roll_input roll_Input)
+        public static Data.Packet<byte[]> Roll_dice(Data.Roll_input roll_Input)
         {
             Data.Packet<byte[]> res = new();
 
