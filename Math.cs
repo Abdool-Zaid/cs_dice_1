@@ -9,7 +9,7 @@ namespace Cs_dice_1
         {
             Cs_dice_1.Data.Packet<byte> res;
             var rand = new Random();
-            res.Status = 0;
+            res.Status = Data.Status.ok;
             res.Payload = (byte)rand.Next(1, max_num+1);// need the +1 to include max_num in rolls
 
             return res;
@@ -18,7 +18,7 @@ namespace Cs_dice_1
         {
             Data.Packet<byte[]> res = new();
 
-            res.Status = 0;// TODO: add checks
+            res.Status = Data.Status.ok;// TODO: add checks
             res.Payload = new byte[roll_Input.Amount_of_rolls];
             for (int i = 0; i < roll_Input.Amount_of_rolls; i++)
             {

@@ -2,10 +2,12 @@ namespace Cs_dice_1
 {
     public class Data// will hold enums and common structs
     {
+       
         public enum Coin { tail = 0, head = 1 }
+        public enum Status {ok, blank, range_error}
         public struct Patterns
         {
-             public string roll;
+            public string roll;
             public Patterns()
             {
                 roll = @"^([1-9]|[1-9][0-9]|100)[d]([1-9]|[1-9][0-9]|100)$";
@@ -23,12 +25,12 @@ namespace Cs_dice_1
         }
         public struct Packet<T>
         {
-            public byte Status;
+            public Cs_dice_1.Data.Status Status;
             public T? Payload;
 
             public Packet()
             {
-                Status = 1;
+                Status = Status.ok;
                 Payload = default;
             }
         }

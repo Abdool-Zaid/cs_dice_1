@@ -7,7 +7,7 @@ namespace Cs_dice_1
         static void Main(string[] args)
         {
 
-                    Cs_dice_1.View.Show(@"[PH] welcome text");//TODO: change to welcome message
+            Cs_dice_1.View.Show(@"welcome");
 
             while (true)
             {
@@ -21,8 +21,19 @@ namespace Cs_dice_1
                 }
                 if (Payload.Status > 0)
                 {
-                    //TODO: add switch case here to handle different errors
-                    Cs_dice_1.View.Show("please enter a valid dice roll");
+                    switch (Payload.Status)
+                    {
+                        case Data.Status.blank:
+                            Cs_dice_1.View.Show("no blank spaces or empty strings allowed");                   
+                        break;
+                        case Data.Status.range_error:
+                            Cs_dice_1.View.Show("must be in the range of 1-100 i.e. 1d20");                   
+                        break;
+                        default:
+                            Cs_dice_1.View.Show("please enter a valid dice roll");
+                        break;
+                        
+                    }
                 }
                 else
                 {

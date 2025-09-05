@@ -10,7 +10,7 @@ namespace Cs_dice_1
             Cs_dice_1.Data.Packet<Cs_dice_1.Data.Roll_input> res = new();
             if (String.IsNullOrWhiteSpace(inp_cmd))
             {
-                res.Status = 2;
+                res.Status = Data.Status.blank;
             }
             else
             {
@@ -21,11 +21,11 @@ namespace Cs_dice_1
                 {
                     res.Payload.Amount_of_rolls = Convert.ToByte(match.Groups[1].Value);
                     res.Payload.Type_of_dice = Convert.ToByte(match.Groups[2].Value);
-                    res.Status = 0;
+                    res.Status = Data.Status.ok;
                 }
                 else
                 {
-                    res.Status = 3;
+                    res.Status = Data.Status.range_error;
                 }
 
             }
