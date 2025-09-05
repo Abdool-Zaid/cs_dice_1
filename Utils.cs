@@ -11,10 +11,13 @@ namespace Cs_dice_1
             if (String.IsNullOrWhiteSpace(inp_cmd))
             {
                 res.Status = Data.Status.blank;
+                return res;
             }
+
+
             else
             {
-                Cs_dice_1.Data.Patterns patterns = new();
+                Cs_dice_1.Data.Patterns patterns = new();// TODO: change to switch cas to handle coin flip and more later down the line 
 
                 Match match = Regex.Match(inp_cmd, patterns.roll);
                 if (match.Success)
@@ -29,8 +32,8 @@ namespace Cs_dice_1
                 }
 
             }
-            
             return res;
+            
         }
 
     }

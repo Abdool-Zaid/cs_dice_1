@@ -14,6 +14,14 @@ namespace Cs_dice_1
 
             return res;
         }
+        static Cs_dice_1.Data.Packet<Cs_dice_1.Data.Coin> Coin_flip()
+        {
+            Data.Packet<Data.Coin> res = new();
+            var rand = new Random();
+            res.Status = Data.Status.ok;
+            res.Payload = (Data.Coin)rand.Next(1,2);
+            return res;
+        }
         public static Cs_dice_1.Data.Packet<byte[]> Roll_dice(Cs_dice_1.Data.Roll_input roll_Input)
         {
             Data.Packet<byte[]> res = new();
@@ -23,7 +31,7 @@ namespace Cs_dice_1
             for (int i = 0; i < roll_Input.Amount_of_rolls; i++)
             {
                 res.Payload[i] = Roll(roll_Input.Type_of_dice).Payload;
-            }   
+            }
             return res;
         }
             
